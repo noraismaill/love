@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love Message</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="message-page">
+    <div class="message-container">
+        <div class="envelope" id="envelope">
+            <div class="envelope-flap" id="flap"></div>
+            <div class="envelope-body">
+                <div class="paper" id="paper">
+                    <div class="paper-content">
+                        <h3 style="color: #8b0000;">❤️To My Dearest Love Salem ❤️ </h3>
+                        <p class="love-message">
+                            happy valantain My love,
+Since the day I met you, you have always been in my heart 
+and on my mind. Not a single day passes where I forget you, 
+even for a moment. I care about you more than words can explain, 
+and I truly want only the best things in life for you.
+
+I hope our future is full of happiness, peace, and success.
+I want to see you proud of yourself and proud of everything you achieve.
+Your dreams matter to me, and your smile means so much to my heart.
+
+I love you deeply, 
+and I always wish goodness, light, 
+and beautiful moments for you. 
+No matter what happens, 
+you will always have a special place inside my heart
+you're my favorite part of everydays the reason I smile and 
+the home my heart chose . 🌷 
+                        </p>
+                        <div class="hearts-animation">
+                            <span class="heart">❤️</span>
+                            <span class="heart">💖</span>
+                            <span class="heart">💘</span>
+                            <span class="heart">💕</span>
+                            <span class="heart">💞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="back-button" onclick="window.location.href='index.htm'">Back to Heart</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const envelope = document.getElementById('envelope');
+            const flap = document.getElementById('flap');
+            const paper = document.getElementById('paper');
+            
+            // Trigger animation after page loads
+            setTimeout(function() {
+                envelope.classList.add('open');
+                flap.classList.add('lift');
+            }, 1000);
+            
+            // Paper slides out after flap lifts
+            setTimeout(function() {
+                paper.classList.add('slide-out');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

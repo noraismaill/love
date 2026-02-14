@@ -1,0 +1,352 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e5afc0, #eca5c7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+
+
+.love-check input {
+  display: none; /* hide real checkbox */
+}
+
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border: 2px solid hotpink;
+  color: rgb(250, 250, 250);
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  background:#960655 ;
+}
+
+/* when checked */
+.love-check input:checked + .box {
+  background: hotpink;
+  color: white;
+}
+
+/* Heart shape container */
+.heart-container {
+    position: relative;
+    margin-bottom: 50px;
+    animation: pulse 2s infinite;
+}
+
+/* Heart shape using CSS */
+.heart-shape {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.heart-shape:before,
+.heart-shape:after {
+    position: absolute;
+    content: "";
+    left: 100px;
+    top: 0;
+    width: 100px;
+    height: 160px;
+    background: #960655;
+    border-radius: 100px 100px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart-shape:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Text inside heart */
+.heart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Infinity heart section */
+.infinity-heart {
+    margin-top: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.infinity-symbol {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: colorChange 4s infinite;
+}
+
+.infinity-text {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes colorChange {
+    0% { color: #ff61a6; }
+    25% { color: #ff6b6b; }
+    50% { color: #ff0080; }
+    75% { color: #ff4d4d; }
+    100% { color: #ff61a6; }
+}
+
+/* Checkbox styling */
+.checkbox-container {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.love-checkbox {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    accent-color: #ff61a6;
+}
+
+.checkbox-label {
+    display: block;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+/* Add some sparkles */
+.container:before {
+    content: "✨";
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: 24px;
+    animation: sparkle 1.5s infinite;
+}
+
+.container:after {
+    content: "✨";
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    font-size: 24px;
+    animation: sparkle 2s infinite 0.5s;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Message page styling */
+.message-page {
+    background: linear-gradient(135deg, #e5afc0, #eca5c7);
+    overflow: hidden;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    position: relative;
+}
+
+.envelope {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    margin: 2px auto;
+    transition: all 1s ease;
+}
+
+/* Envelope opening animation */
+.envelope.open {
+    transform: translateY(5px);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-bottom: 120px solid #960655;
+    
+    z-index: 10;
+    transition: all 1s ease;
+    transform-origin: top center;
+    overflow: hidden;
+}
+
+/* Flap lifting animation */
+.envelope-flap.lift {
+    transform: rotateX(180deg) translateZ(-100px);
+    z-index: 2; /* Behind the paper */
+}
+
+.envelope-body {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    background: #960655;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
+    overflow: visible;
+    margin-top: 120px;
+    min-height: 200px;
+}
+
+/* Paper that slides out */
+.paper {
+
+    position: absolute;
+    top: -550px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 500px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 1.5s ease;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Paper sliding out animation */
+.paper.slide-out {
+    opacity: 1;
+    top: -120px;
+    transform: translateX(-50%) translateY(0);
+}
+
+.paper-content {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.paper-content h1 {
+    color: #8b0000;
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px #960655;
+    font-family: 'Courier New', Courier, monospace; /* Romantic typewriter font */
+}
+
+.paper-content h2 {
+    color: #8b0000;
+    margin: 0 0 15px 0;
+    font-size: 22px;
+    color: #8b0000;
+    text-shadow: 1px 1px 2px ;
+    font-family: 'Georgia', 'Times New Roman', serif; /* Classic romantic font */
+    text-align: center;
+    width: 100%;
+}
+
+.love-message {
+    color: #8b0000;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 10px 0;
+    color: #8b0000;
+    text-shadow: 1px 1px 2px ;
+    font-family: 'Georgia', 'Times New Roman', serif; /* Classic romantic font */
+    line-height: 1.5;
+    text-align: center;
+}
+
+.hearts-animation {
+    margin: 20px 0;
+}
+
+.heart {
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 5px;
+    animation: heartBeat 1.5s infinite;
+}
+
+.heart:nth-child(2) { animation-delay: 0.2s; }
+.heart:nth-child(3) { animation-delay: 0.4s; }
+.heart:nth-child(4) { animation-delay: 0.6s; }
+.heart:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+.back-button {
+    background: #e63783;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+    position: absolute;
+    bottom: 30px;
+}
+
+.back-button:hover {
+    background: #e9a0bc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
