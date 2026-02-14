@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine </title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkbox = document.getElementById('loveCheckbox');
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    window.location.href = 'message.htm';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Heart shape with checkbox -->
+        <div class="heart-container">
+            <div class="heart-shape">
+                <div class="heart-text">To My Love Salem</div>
+                <div class="checkbox-container">
+                   
+                    <label class="love-check" for="loveCheckbox">
+                        <input type="checkbox" id="loveCheckbox" autocomplete="off">
+                        <span class="box">Click here dear Salem</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Infinity heart symbol -->
+        <div class="infinity-heart">
+            <div class="infinity-symbol">❤️❤️❤️</div>
+            <div class="infinity-text">FOREVER YOU</div>
+        </div>
+    </div>
+</body>
+</html>
